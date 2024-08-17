@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Samo - Strona Główna</title>
+    <link rel="icon" href="img/SA (1).png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">Samo</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#products">Produkty</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Stylowe i Nowoczesne Koszulki</h1>
+        <p>Odkryj naszą kolekcję odzieży stworzoną dla Ciebie.</p>
+        <a href="#products" class="cta-button">Zobacz Kolekcję</a>
+      </section>
+
+      <section id="products" class="products-section">
+        <h2>Nasze Produkty</h2>
+        <div class="products">
+          <!-- Produkt 1 z przyciskiem do zmiany zdjęcia -->
+          <div class="product">
+            <div id="product1" class="product-image">
+              <img
+                src="img/pandafront.png"
+                alt="Czarny T-Shirt Panda Power Przód"
+                data-alt-src="img/pandaback.png"
+              />
+            </div>
+            <h3>Czarny T-Shirt Panda Power</h3>
+            <p class="price">76.99 PLN</p>
+            <!-- Przycisk do zmiany zdjęcia -->
+            <button onclick="toggleImage('product1')" class="toggle-button">
+              <strong>Zobacz tył</strong>
+            </button>
+            <a href="product1.html" class="product-link">Szczegóły produktu</a>
+          </div>
+
+          <!-- Produkt 2 z przyciskiem do zmiany zdjęcia -->
+          <div class="product">
+            <div id="product2" class="product-image">
+              <img
+                src="img/pldobre.png"
+                alt="Czarny T-Shirt z nadrukiem Tył"
+                data-alt-src="img/pldobreB.png"
+              />
+            </div>
+            <h3>Czarny T-Shirt z nadrukiem</h3>
+            <p class="price">79.99 PLN</p>
+            <!-- Przycisk do zmiany zdjęcia -->
+            <button onclick="toggleImage('product2')" class="toggle-button">
+              <strong>Zobacz tył</strong>
+            </button>
+            <a href="product2.html" class="product-link">Szczegóły produktu</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <p>
+        &copy; 2024 Samo. Wszystkie prawa zastrzeżone. |
+        <a href="mailto:kontakt@shop.com">kontakt@Samo.com</a>
+      </p>
+    </footer>
+
+    <script>
+      function toggleImage(id) {
+        const productImage = document
+          .getElementById(id)
+          .getElementsByTagName("img")[0];
+        const currentSrc = productImage.src;
+        const altSrc = productImage.getAttribute("data-alt-src");
+        productImage.src = altSrc;
+        productImage.setAttribute("data-alt-src", currentSrc);
+      }
+    </script>
+  </body>
+</html>

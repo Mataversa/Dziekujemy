@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/SA (1).png" />
+    <title>Produkt - Samo</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .breadcrumbs {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      .breadcrumbs a {
+        text-decoration: none;
+        color: #777;
+        margin-right: 5px;
+      }
+
+      .breadcrumbs a:hover {
+        text-decoration: underline;
+      }
+
+      .product {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .product-images {
+        width: 50%;
+      }
+
+      .product-images img {
+        width: 100%;
+        border-radius: 8px;
+      }
+
+      .product-details {
+        width: 45%;
+      }
+
+      .product-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      .product-price {
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .product-color,
+      .product-size {
+        margin-bottom: 20px;
+      }
+
+      .product-color label,
+      .product-size label {
+        font-weight: bold;
+      }
+
+      .product-color select,
+      .product-size select {
+        padding: 10px;
+        font-size: 16px;
+        width: 100%;
+        margin-top: 5px;
+      }
+
+      .product-description {
+        margin-bottom: 20px;
+      }
+
+      .product-description p {
+        margin: 0 0 10px;
+        line-height: 1.6;
+      }
+
+      .add-to-cart {
+        background-color: #333;
+        color: #fff;
+        padding: 15px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 8px;
+        font-size: 16px;
+      }
+
+      .add-to-cart:hover {
+        background-color: #555;
+      }
+
+      header {
+        background-color: #000;
+        font-family: "Poppins", sans-serif;
+        color: #fff;
+        padding: 20px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      header .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-left: 20px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        margin-right: 20px;
+      }
+
+      nav ul li {
+        margin: 0 15px;
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #ff6347; /* Kolor hover */
+      }
+
+      /* Przycisk do zmiany zdjęcia */
+      .toggle-button {
+        background-color: #000;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 700; /* Pogrubienie tekstu */
+        margin-top: 10px;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+
+      .toggle-button:hover {
+        background-color: #ff6347;
+        transform: scale(1.05);
+      }
+
+      .thumbnails {
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      .thumbnails img {
+        width: 22%;
+        cursor: pointer;
+        border: 2px solid transparent;
+        border-radius: 8px;
+      }
+
+      .thumbnails img:hover {
+        border: 2px solid #333;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">Samo</div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Produkty</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="breadcrumbs">
+        <a href="index.html">Samo</a> > Czarna koszulka oversize z nadrukiem
+      </div>
+
+      <div class="product">
+        <div class="product-images">
+          <img
+            id="main-image"
+            src="img/pandafront.png"
+            alt="Czarna koszulka oversize z nadrukiem i białymi wstawkami"
+          />
+
+          <div class="thumbnails">
+            <img
+              src="img/pandafront.png"
+              alt="Zdjęcie 1"
+              onclick="changeImage('img/pandafront.png')"
+            />
+            <img
+              src="img/pandaback.png"
+              alt="Zdjęcie 2"
+              onclick="changeImage('img/pandaback.png')"
+            />
+          </div>
+        </div>
+
+        <div class="product-details">
+          <h1 class="product-title">
+            Czarna koszulka oversize z nadrukiem Panda Power
+          </h1>
+          <p class="product-price">76,99 PLN</p>
+
+          <div class="product-color">
+            <label for="color">Kolor:</label>
+            <select id="color">
+              <option value="czarny">Czarny</option>
+            </select>
+          </div>
+
+          <div class="product-size">
+            <label for="size">Rozmiar:</label>
+            <select id="size">
+              <option value="xs">XS</option>
+              <option value="s">S</option>
+              <option value="m">M</option>
+              <option value="l">L</option>
+              <option value="xl">XL</option>
+              <option value="xxl">XXL</option>
+            </select>
+          </div>
+
+          <div class="product-description">
+            <h2>Opis produktu</h2>
+            <p>Czarna koszulka męska oversize w stylu Pand.</p>
+            <p>
+              Czarny T-shirt z kontrastowymi wstawkami i napisami. Świetnie się
+              sprawdzi w casualowym urban looku, jak i w sportowym secie z
+              dresowymi szortami.
+            </p>
+            <p>Gramatura materiału: 200 gsm</p>
+          </div>
+
+          <a href="#" class="add-to-cart">Dodaj - 76,99 PLN</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
